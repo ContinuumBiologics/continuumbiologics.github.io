@@ -11,7 +11,7 @@
 html{scroll-behavior:smooth}
 body{background:var(--br);color:var(--tx);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(15,10,8,0.97),transparent);backdrop-filter:blur(4px)}
-.nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1);opacity:0.9;text-decoration:none}
+.nav-logo img{height:52px;width:auto;filter:brightness(0) invert(1);opacity:0.9}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
 .nav-links a{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mt);text-decoration:none;transition:color 0.3s}
 .nav-links a:hover{color:var(--gd)}
@@ -19,9 +19,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:
 .glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(160,82,45,0.12) 0%,transparent 65%);top:-100px;right:-100px;pointer-events:none;animation:breathe 9s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .hero-logo{margin-bottom:2rem;opacity:0;animation:rise 1s ease 0.2s forwards}
-.hero-logo img{height:180px;width:auto;filter:brightness(0) invert(1);opacity:0.95}
-.hero-brand{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(3.5rem,7vw,6.5rem);line-height:1;letter-spacing:-0.01em;color:var(--tx);opacity:0;animation:rise 1s ease 0.4s forwards}
-.hero-brand sup{font-size:0.35em;letter-spacing:0.15em;color:var(--gd);vertical-align:super;font-weight:300}
+.hero-logo img{height:280px;width:auto;filter:brightness(0) invert(1);opacity:0.95}
 .hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1rem,2vw,1.5rem);color:var(--mt);margin-top:1.5rem;letter-spacing:0.05em;opacity:0;animation:rise 1s ease 0.6s forwards}
 .hero-cta{margin-top:3rem;opacity:0;animation:rise 1s ease 0.8s forwards}
 .btn{display:inline-block;padding:0.85rem 2rem;border:1px solid var(--gd2);color:var(--gd);font-size:0.62rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:background 0.3s,color 0.3s}
@@ -37,8 +35,6 @@ section{padding:6rem 4rem;position:relative}
 .why-lead{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.4;color:var(--tx);max-width:750px}
 .why-lead em{font-style:italic;color:var(--gd)}
 #what{background:var(--br3)}
-.sec-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2rem,3.5vw,3.2rem);line-height:1.15;margin-bottom:3rem}
-.sec-title em{font-style:italic;color:var(--gd)}
 .services-list{list-style:none;display:flex;flex-direction:column;gap:0;max-width:700px}
 .services-list li{padding:1.5rem 0;border-bottom:1px solid var(--gb);font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:300;color:var(--tx);display:flex;align-items:center;gap:1.5rem;transition:color 0.3s}
 .services-list li:first-child{border-top:1px solid var(--gb)}
@@ -61,7 +57,7 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--gb);display:flex;justify-c
 .reveal.visible{opacity:1;transform:translateY(0)}
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
-@media(max-width:768px){nav{padding:1.2rem 2rem}.nav-links{display:none}section{padding:4rem 2rem}#home{padding:0 2rem}.launch-banner{padding:1.5rem 2rem}#begin{padding:5rem 2rem}footer{padding:1.5rem 2rem}.hero-logo img{height:120px}.hero-brand{font-size:3rem}}
+@media(max-width:768px){nav{padding:1.2rem 2rem}.nav-links{display:none}section{padding:4rem 2rem}#home{padding:0 2rem}.launch-banner{padding:1.5rem 2rem}#begin{padding:5rem 2rem}footer{padding:1.5rem 2rem}.hero-logo img{height:120px}}
 </style>
 </head>
 <body>
@@ -82,8 +78,7 @@ footer{padding:1.8rem 4rem;border-top:1px solid var(--gb);display:flex;justify-c
 <div class="hero-logo">
 <img src="logo.png" alt="Continuum Biologics Advisory">
 </div>
-<div class="hero-brand">Continuum Biologics<sup>Advisory</sup></div>
-<p class="hero-tagline">Raising the standard of biological medicines — globally.</p>
+<p class="hero-tagline">Advanced Therapies and Biological Testing Laboratories — Continuity through scrutiny.</p>
 <div class="hero-cta"><a href="#begin" class="btn">Begin the conversation</a></div>
 </section>
 
