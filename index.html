@@ -1,14 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continuum Biologics Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-body { background: #0F0A08; color: #E2EEF2; font-family: Georgia, serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-h1 { font-size: 3rem; font-weight: 300; text-align: center; }
-em { color: #D4956A; font-style: italic; }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--br:#0F0A08;--br2:#140D09;--br3:#110B07;--gd:#D4956A;--gd2:#A0522D;--gd3:#B5622F;--gp:rgba(160,82,45,0.08);--gb:rgba(160,82,45,0.2);--tx:#E2EEF2;--mt:#9A7B6B;--mt2:#6B4E3D}
+html{scroll-behavior:smooth}
+body{background:var(--br);color:var(--tx);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 4rem;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(15,10,8,0.97),transparent);backdrop-filter:blur(4px)}
+.nav-logo{display:flex;align-items:center;gap:1rem;text-decoration:none}
+.nav-logo img{height:56px;width:auto;filter:brightness(0) invert(1);opacity:0.9}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mt);text-decoration:none;transition:color 0.3s}
+.nav-links a:hover{color:var(--gd)}
+#home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 4rem;position:relative;overflow:hidden}
+.glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(160,82,45,0.12) 0%,transparent 65%);top:-100px;right:-100px;pointer-events:none;animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.hero-eyebrow{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gd2);margin-bottom:2rem;opacity:0;animation:rise 1s ease 0.3s forwards}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3rem,6vw,5.5rem);line-height:1.05;margin-bottom:2.5rem;opacity:0;animation:rise 1s ease 0.5s forwards}
+.hero-headline em{font-style:italic;color:var(--gd)}
+.hero-rule{width:48px;height:1px;background:var(--gd2);margin-bottom:2rem;opacity:0;animation:rise 1s ease 0.7s forwards}
+.hero-sub{font-size:0.72rem;letter-spacing:0.12em;line-height:2.2;color:var(--mt);text-transform:uppercase;opacity:0;animation:rise 1s ease 0.9s forwards}
+.hero-cta{margin-top:3rem;opacity:0;animation:rise 1s ease 1.1s forwards}
+.btn{display:inline-block;padding:0.85rem 2rem;border:1px solid var(--gd2);color:var(--gd);font-size:0.62rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:background 0.3s,color 0.3s}
+.btn:hover{background:var(--gd2);color:#fff}
+.launch-banner{background:linear-gradient(135deg,rgba(160,82,45,0.12),rgba(212,149,106,0.06));border-top:1px solid var(--gb);border-bottom:1px solid var(--gb);padding:2rem 4rem;display:flex;align-items:center;justify-content:center;gap:1.5rem}
+.launch-dot{width:7px;height:7px;border-radius:50%;background:var(--gd);animation:blink 2s ease-in-out infinite}
+.launch-text{text-align:center}
+.launch-text span{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:300;color:var(--tx)}
+.launch-text em{font-style:italic;color:var(--gd)}
+.launch-text div{font-size:0.58rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--mt);margin-top:0.3rem}
+section{padding:6rem 4rem;position:relative}
+.sec-label{font-size:0.58rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gd2);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--gd2)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.15;margin-bottom:3rem}
+.sec-title em{font-style:italic;color:var(--gd)}
+#why{background:var(--br2);border-top:1px solid var(--gb)}
+.why-lead{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:300;line-height:1.4;color:var(--tx);max-width:700px}
+#what{background:var(--br3)}
+.services{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--gb)}
+.scard{padding:2.5rem 2rem;border-right:1px solid var(--gb);border-bottom:1px solid var(--gb);position:relative;overflow:hidden;transition:background 0.4s}
+.scard::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gd);transition:height 0.4s}
+.scard:hover{background:var(--gp)}
+.scard:hover::before{height:100%}
+.snum{font-family:'Cormorant Garamond',serif;font-size:0.8rem;color:var(--gd2);margin-bottom:1rem;letter-spacing:0.1em}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--tx);margin-bottom:0.8rem;line-height:1.3}
+.sdesc{font-size:0.68rem;line-height:1.9;color:var(--mt)}
+#who{background:var(--br2);border-top:1px solid var(--gb)}
+.who-lead{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:300;line-height:1.4;max-width:700px}
+.who-lead em{font-style:italic;color:var(--gd)}
+#begin{background:var(--br);border-top:1px solid var(--gb);text-align:center;padding:8rem 4rem}
+#begin img{height:130px;width:auto;filter:brightness(0) invert(0.8) sepia(0.5) hue-rotate(10deg) saturate(1.3);margin-bottom:2.5rem}
+.begin-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:1.5rem}
+.begin-title em{font-style:italic;color:var(--gd)}
+.begin-sub{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mt);margin-bottom:3rem;line-height:2}
+.begin-email{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gd);text-decoration:none;border-bottom:1px solid var(--gb);padding-bottom:0.3rem;transition:color 0.3s}
+.begin-email:hover{color:#fff}
+footer{padding:1.8rem 4rem;border-top:1px solid var(--gb);display:flex;justify-content:space-between;align-items:center}
+.fcopy{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--mt2)}
+.fdot{width:5px;height:5px;border-radius:50%;background:var(--gd2);animation:blink 2.5s ease-in-out infinite}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
+@media(max-width:768px){nav{padding:1.5rem 2rem}.nav-links{display:none}section{padding:4rem 2rem}#home{padding:0 2rem}.launch-banner{padding:1.5rem 2rem}.services{grid-template-columns:1fr}#begin{padding:5rem 2rem}footer{padding:1.5rem 2rem}}
 </style>
 </head>
 <body>
-<h1>Continuum Biologics<br><em>Advisory</em></h1>
+<nav>
+<a href="#home" class="nav-logo">
+<img src="logo.png" alt="Continuum Biologics Advisory">
+</a>
+<ul class="nav-links">
+<li><a href="#why">Why It Matters</a></li>
+<li><a href="#what">What We Do</a></li>
+<li><a href="#who">Who We Serve</a></li>
+<li><a href="#begin">Begin</a></li>
+</ul>
+</nav>
+
+<section id="home">
+<div class="glow"></div>
+<p class="hero-eyebrow">GMP &nbsp;·&nbsp; Biologics &nbsp;·&nbsp; Regulatory Science &nbsp;·&nbsp; Australia</p>
+<h1 class="hero-headline">Raising the standard<br>of biological medicines —<br><em>globally.</em></h1>
+<div class="hero-rule"></div>
+<p class="hero-sub">Australia &nbsp;·&nbsp; US &nbsp;·&nbsp; EU &nbsp;·&nbsp; Indo-Pacific</p>
+<div class="hero-cta"><a href="#begin" class="btn">Begin the conversation</a></div>
+</section>
+
+<div class="launch-banner">
+<div class="launch-dot"></div>
+<div class="launch-text">
+<span>Launching &nbsp;</span><em style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.5vw,2rem);color:#D4956A;">2026</em>
+<div>Australia &nbsp;·&nbsp; US &nbsp;·&nbsp; EU &nbsp;·&nbsp; Indo-Pacific</div>
+</div>
+<div class="launch-dot" style="animation-delay:1s"></div>
+</div>
+
+<section id="why">
+<div class="sec-label">Why It Matters</div>
+<p class="why-lead reveal">The cost of poor GMP is measured in patient outcomes.</p>
+</section>
+
+<section id="what">
+<div class="sec-label">What We Do</div>
+<h2 class="sec-title reveal">Four disciplines.<br>One <em>unifying standard.</em></h2>
+<div class="services reveal">
+<div class="scard">
+<div class="snum">01</div>
+<div class="stitle">GMP Systems & Inspection Readiness</div>
+<div class="sdesc">End-to-end preparation of quality systems and manufacturing operations for TGA, PIC/S, and WHO GMP inspection — built on firsthand knowledge of what inspectors look for.</div>
+</div>
+<div class="scard">
+<div class="snum">02</div>
+<div class="stitle">Outbreak & Surge Capability</div>
+<div class="sdesc">Strategic advisory for organisations building or activating biological manufacturing surge capacity in response to outbreak, pandemic, or public health emergency scenarios.</div>
+</div>
+<div class="scard">
+<div class="snum">03</div>
+<div class="stitle">Cell & Gene Therapy Advisory</div>
+<div class="sdesc">Specialist advisory for CGT developers and manufacturers navigating the intersection of complex biological science, advanced therapy GMP, and Australian regulatory expectations.</div>
+</div>
+<div class="scard">
+<div class="snum">04</div>
+<div class="stitle">Biological Testing Advisory</div>
+<div class="sdesc">GMP and GLP advisory for biological testing laboratories — contract testing organisations, hospital laboratories, and NATA-accredited facilities operating in regulated environments.</div>
+</div>
+</div>
+</section>
+
+<section id="who">
+<div class="sec-label">Who We Serve</div>
+<p class="who-lead reveal">Built for leaders who understand that quality is a <em>strategic imperative.</em></p>
+</section>
+
+<section id="begin">
+<img src="logo.png" alt="Continuum Biologics Advisory">
+<h2 class="begin-title reveal">The conversation<br>begins <em>here.</em></h2>
+<p class="begin-sub reveal">Continuum accepts engagements selectively.<br>Reach out to discuss your advisory needs.</p>
+<a href="mailto:info@continuumbiologics.com.au" class="begin-email reveal">info@continuumbiologics.com.au</a>
+</section>
+
+<footer>
+<span class="fcopy">© 2026 Continuum Biologics Advisory &nbsp;·&nbsp; ABN Registered &nbsp;·&nbsp; Australia</span>
+<div class="fdot"></div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible')}),{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
